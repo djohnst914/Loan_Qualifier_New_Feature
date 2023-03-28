@@ -6,11 +6,14 @@ This is a command line application to match applicants with qualifying loans.
 Example:
     $ python app.py
 """
+
+# Import necessary libraries
 import sys
 import fire
 import questionary
 from pathlib import Path
 
+# Import custom functions from utils folder
 from qualifier.utils.fileio import save_csv
 
 from qualifier.utils.fileio import load_csv
@@ -33,6 +36,7 @@ def load_bank_data():
         The bank data from the data rate sheet CSV file.
     """
 
+    # Customer inputs file path to access available bank data
     csvpath = questionary.text("Enter a file path to a rate-sheet (.csv):").ask()
     csvpath = Path(csvpath)
     if not csvpath.exists():
@@ -48,6 +52,7 @@ def get_applicant_info():
         Returns the applicant's financial information.
     """
 
+    # Customer inputs info
     credit_score = questionary.text("What's your credit score?").ask()
     debt = questionary.text("What's your current amount of monthly debt?").ask()
     income = questionary.text("What's your total monthly income?").ask()
@@ -110,11 +115,19 @@ def save_qualifying_loans(qualifying_loans):
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
     """
+
+    # No qualifying loans returns exit message
     if not qualifying_loans:
         sys.exit ("Oops! No qualifying loans were found.")
+    
+    # If qualifying loans found, confirm with user if they want to save results
     confirmation = questionary.confirm("Would you like to save your qualifying loans?").ask()
+
+    # If confirmation contains true, ask user to input file path they want to save to
     if confirmation == True:
         csvpath = questionary.text("Please enter the file path you would like to save your qualifying loans to").ask()
+    
+    # Input file path save through save_csv function
         save_csv (csvpath, qualifying_loans)
         print("Thank you and have a nice day!")
 
@@ -136,6 +149,6 @@ def run():
     # Save qualifying loans
     save_qualifying_loans(qualifying_loans)
 
-
+# Ensure python will run functions
 if __name__ == "__main__":
     fire.Fire(run)
