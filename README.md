@@ -22,7 +22,7 @@ Before running the program, ensure your operating system has at least version 3.
 - To install Fire from pypi, in terminal run: ![pip_fire](https://user-images.githubusercontent.com/123714457/228030808-a5269f51-9e1a-4955-bc5f-3fcc63f594f0.png)
 - To install Questionary from pypi, in terminal run: ![pip_quest](https://user-images.githubusercontent.com/123714457/228030876-5ad76caa-d23a-4c5a-bf15-f783c7c2cd4c.png)
 - When you open the program in VS Code, double check if the Fire and Questionary imports at the top of the main app are loading correctly. If not, check your selected python version in the bottom right of the screen
-<img width="517" alt="import_3 11" src="https://user-images.githubusercontent.com/123714457/228335036-697ec02d-4ca0-4242-85b9-14df9b3a6656.png"> <img width="516" alt="import_3 9" src="https://user-images.githubusercontent.com/123714457/228335097-62dad7d8-6058-4081-977e-5acf0467680c.png">
+<img width="250" alt="import_3 11" src="https://user-images.githubusercontent.com/123714457/228335036-697ec02d-4ca0-4242-85b9-14df9b3a6656.png"> <img width="250" alt="import_3 9" src="https://user-images.githubusercontent.com/123714457/228335097-62dad7d8-6058-4081-977e-5acf0467680c.png">
 - Good to go!
 ---
 
