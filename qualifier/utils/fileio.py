@@ -6,6 +6,10 @@ This contains a helper function for loading and saving CSV files.
 """
 import csv
 
+def save_csv(csvpath, input_data):
+    with open (csvpath, 'w', newline='') as csvfile:
+        csvwriter = csv.writer(csvfile)
+        csvwriter.writerows(input_data)
 
 def load_csv(csvpath):
     """Reads the CSV file from path provided.
