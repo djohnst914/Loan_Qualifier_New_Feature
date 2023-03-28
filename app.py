@@ -122,6 +122,8 @@ def save_qualifying_loans(qualifying_loans):
     
     # If qualifying loans found, confirm with user if they want to save results
     confirmation = questionary.confirm("Would you like to save your qualifying loans?").ask()
+    if confirmation == False:
+        print("Thank you and have a nice day!")
 
     # If confirmation contains true, ask user to input file path they want to save to
     if confirmation == True:
@@ -130,6 +132,7 @@ def save_qualifying_loans(qualifying_loans):
     # Input file path save through save_csv function
         save_csv (csvpath, qualifying_loans)
         print("Thank you and have a nice day!")
+    
 
 
 def run():
